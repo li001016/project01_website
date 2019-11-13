@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: whitesmoke;
+}
+.wrapper {
+    width: 1180px;
+    height: 800px;
+background-image: linear-gradient(lightgray,wheat);
+    position: relative;
+    margin: 0 auto;
+}
+.pizza_l {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.pizza_r {
+    position: absolute;
+    top: 85px;
+    right: 10px;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo {
+
+position: absolute;
+left: 165px;
+    top: 5px;
+z-index: 3;
+}
+nav {
+    width: 1160px;
+    height: 100px;
+    background-color: yellowgreen;
+    color: darkgray;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+top: 150px;
+    left: 10px;
+    z-index: 1;
+}
+
+
+
+
+p#nav_home, p#nav_menu, p#nav_about-us, p#nav_gift-cards {
+    display: inline;
+    font-size: 24px;
+    font-family: "Avenir Next Condensed", Arial, sans-serif;
+    font-weight: bold;
+    padding: 0 25px;
+    line-height: 100px;
+
+}
+
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: dimgray;
+}
+
+a:hover {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+a:active {
+    text-decoration: none;
+    color: deepskyblue;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.footer {
+    position: absolute;
+    bottom: 25px;
+    left: 50px;
+    font-size: 18px;
+    font-family: "Avenir Next Condensed", Arial, sans-serif;
+    font-weight: normal;
+
+}
+

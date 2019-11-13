@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galactic Cards</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/tabs.css" type="text/css">
+    <style>
+        .tittle {
+            font-family: "Roboto", sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            float: left;
+            width: 179px;
+            height: 161px;
+            position: relative;
+            top: 285px;
+            left: 140px;
+            z-index: 4;
+        }
+
+        .intro {
+            font-family: "Roboto", sans-serif;
+            font-size: 15px;
+            line-height: 25px;
+            font-weight: normal;
+            float: left;
+            width: 650px;
+            height: 117px;
+            position: relative;
+            top: 290px;
+            left: 220px;
+            z-index: 4;
+        }
+
+        .giftcard-img {
+            float: left;
+            position: relative;
+            top: 225px;
+            left: -50px;
+            z-index: 4;
+        }
+
+        /* Style the buttons inside the tab */
+        .prices {
+            font-family: "Lato", sans-serif;
+            color: whitesmoke;
+            border: none;
+            background-color: #4CAF50;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            top: 320px;
+            left: 10px;
+            margin: 10px 10px;
+            border-radius: 10px;
+        }
+
+        /* On mouse-over */
+        .prices:hover {
+            background: green;
+        }
+
+        .quantity {
+            font-family: "Lato", sans-serif;
+            font-size: 20px;
+            position: relative;
+            top: 340px;
+            left: 25px;
+        }
+
+        select {
+            font-family: "Lato", sans-serif;
+            font-size: 16px;
+            width: 100px;
+            position: relative;
+            top: 350px;
+            left: 20px;
+        }
+
+        .submit {
+            font-family: "Lato", sans-serif;
+            background-color: #dc3900;
+            color: white;
+            font-size: 25px;
+            width: 200px;
+            height: 50px;
+            font-weight: normal;
+            position: relative;
+            top: 340px;
+            left: 250px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div id="top"></div>
+    <div class="logo"><img src="images/logo3.png" width="850" alt="logo"></div>
+    <img src="images/pizza_left-2.png" height="200" alt="pizza_graphic_l" class="pizza_l">
+    <img src="images/pizza_right-2.png" height="200" alt="pizza_graphic_r" class="pizza_r">
+
+    <nav>
+        <a href="home.html"><p id="nav_home">HOME</p></a>
+        <a href="menu.html"><p id="nav_menu">MENU</p></a>
+        <a href="about-us.html"><p id="nav_about-us">ABOUT US</p></a>
+        <a href="gift-cards.html"><p id="nav_gift-cards">GIFT CARDS</p></a>
+    </nav>
+
+    <h1 class="tittle">GIFT <br>CARDS</h1>
+    <p class="intro">Galactic Pizza gift cards make the perfect gift for any occasion. Order them here and we’ll get
+        them in the mail within two days of purchase. If you want a gift card in an amount not listed here, give us a
+        call or stop by the restaurant and we’ll make it happen!
+    </p>
+    <div class="giftcard-img">
+        <img src="images/giftcards/giftcard-sample.png" alt="Giftcard Sample" width="450">
+    </div>
+    <div class="choices">
+        <table>
+            <tr>
+                <td>
+                    <button class="prices 25">$25</button>
+                </td>
+                <td>
+                    <button class="prices 30">$30</button>
+                </td>
+                <td>
+                    <button class="prices 40">$40</button>
+                </td>
+                <td>
+                    <button class="prices 50">$50</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="prices 60">$60</button>
+                </td>
+                <td>
+                    <button class="prices 75">$75</button>
+                </td>
+                <td>
+                    <button class="prices 100">$100</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <p class="quantity">Quantity:</p>
+
+    <select name="amount">
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+    </select>
+    <br><br>
+    <button class="submit">ADD TO CART</button>
+
+
+</div> <!--End of wrapper-->
+<!--<script-->
+<!--   $(document).ready(function(){-->
+<!--// Add smooth scrolling to all links-->
+<!--       $("a").on('click', function(event)   {-->
+
+<!--// Make sure.hash has a value before overriding default behavior-->
+<!--            if (this.hash !== "")  {-->
+
+<!--// Prevent default anchor click behavior-->
+<!--//               event.preventDefault();-->
+
+<!--// Store hash-->
+<!--                var hash = this.hash;-->
+
+<!--// Using jQuery's animate() method to add smooth page scroll-->
+<!--// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area-->
+<!--//               $('html, body').animate({-->
+<!--//                   scrollTop: $(hash).offset().top-->
+<!--//                }, 800, function(){-->
+
+<!--// And hash (#) to URL when done scrolling (default click behavior)-->
+<!--//                 window.location.hash = hash;-->
+<!--//              });-->
+<!--//        } // End if-->
+<!--//     });-->
+<!--//   });-->
+<!--</script>-->
+
+</body>
+</html>

@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galactic Pizza</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/tabs.css" type="text/css">
+    <style>
+
+        /* Style the tab */
+        .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            position: relative;
+            width: 40.5%;
+            top: 260px;
+            left: 20px;
+            z-index: 4;
+            height: 530px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            font-family: "Lato", sans-serif;
+            font-style: normal;
+            display: block;
+            background-color: inherit;
+            color: black;
+            margin: 5px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 15px;
+            position: relative;
+            top: -45px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current "tab button" class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            font-family: "Lato", sans-serif;
+            background-color: #f1f1f1;
+            font-style: italic;
+            float: right;
+            padding: 25px 20px;
+            width: 44%;
+            border-left: none;
+            height: 470px;
+            z-index: 4;
+            position: relative;
+            bottom: -300px;
+            right: 20px;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        .category {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 12%;
+            height: 300px;
+            position: relative;
+            top: 300px;
+            z-index: 4;
+            left: 20px;
+        }
+
+        .category button {
+            font-family: "Lato", sans-serif;
+            font-style: normal;
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .category button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current "tab button" class */
+        .category button.active {
+            background-color: #ccc;
+        }
+
+        .key {
+            font-family: "Lato", sans-serif;
+            font-style: italic;
+            background-color: inherit;
+            color: black;
+            text-align: left;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 17px;
+            padding-left: 20px;
+
+        }
+        .extra-space {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .extra-space_pizza {
+            display: inline-block;
+            margin-left: 105px;
+        }
+        .extra-space_pizza_pic {
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .ingredients {
+            position: absolute;
+            bottom: 15px;
+        }
+        #Appetizers {
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div id="top"></div>
+    <div class="logo"><img src="images/logo3.png" width="850" alt="logo"></div>
+    <img src="images/pizza_left-2.png" height="200" alt="pizza_left" class="pizza_l">
+    <img src="images/pizza_right-2.png" height="200" alt="pizza_right" class="pizza_r">
+
+    <nav>
+        <a href="home.html"><p id="nav_home">HOME</p></a>
+        <a href="menu.html"><p id="nav_menu">MENU</p></a>
+        <a href="about-us.html"><p id="nav_about-us">ABOUT US</p></a>
+        <a href="gift-cards.html"><p id="nav_gift-cards">GIFT CARDS</p></a>
+    </nav>
+
+
+    <!--use tabs to show categories-->
+    <div class="category">
+        <button class="categorylinks" onclick="openCategory(event, 'Wings')">Wings</button>
+        <button class="categorylinks" onclick="openCategory(event, 'Specialty-Pizza')" id="defaultOpen">Specialty
+            Pizza
+        </button>
+        <button class="categorylinks" onclick="openCategory(event, 'Appetizers')">Appetizers</button>
+        <button class="categorylinks" onclick="openCategory(event, 'Salads')">Salads</button>
+    </div>
+
+    <!--here's the pizza tab-->
+    <div id="Specialty-Pizza" class="tab">
+        <p class="key">V = VEGAN <span class="extra-space"></span>VO = VEGAN OPTION<span class="extra-space"></span>GF = GLUTEN FREE</p>
+        <table>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Old-School')"><img
+                            src="images/menu/original_img/Old-School.jpg" width="70" alt="old-school" align="old-school"><br>The Old School (VO)
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Bianca')"><img
+                            src="images/menu/original_img/Pizza-Bianca.jpg" width="70" alt="biance"><br>Pizza Bianca
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Brooklyn')"><img
+                            src="images/menu/original_img/Brooklyn-Bee-Vegan.jpg" width="70" alt="brooklyn"><br>The Brooklyn Bee (VO)
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Alfredo')"><img
+                            src="images/menu/original_img/Alfredo.jpg" width="70" alt="alfredo"><br>Alfredo
+                    </button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Vodka')"><img
+                            src="images/menu/original_img/Pizza-Alla-Vodka.jpg" width="70" alt="vodka"><br>Pizza Alla Vodka
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Paul Bunyan')"><img
+                            src="images/menu/original_img/Paul-Bunyan.jpg" width="70" alt="paul-bunyan"><br>The Paul Bunyan (VO)
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Ranch')"><img
+                            src="images/menu/original_img/Ranch-Dude.jpg" width="70" alt="ranch"><br>Ranch Dude
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Harvest')"><img
+                            src="images/menu/original_img/Second-Harvest.jpg" width="70" alt="harvest"><br>Second Harvest
+                    </button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Veggie')"><img
+                            src="images/menu/original_img/Organic-Veggie.jpg" width="70" alt="veggie"><br>Organic Veggie (VO)
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Shroomer')"><img
+                            src="images/menu/original_img/Shroomer.jpg" width="70" alt="shroomer"><br>The Shroomer (VO)
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Mexicali')"><img
+                            src="images/menu/original_img/Second-Harvest.jpg" width="70" alt="mexicali"><br>The Mexicali
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Alamo')"><img
+                            src="images/menu/original_img/Alamo.jpg" width="70" alt="alamo"><br>The Alamo (VO)
+                    </button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Maui-Wowie')"><img
+                            src="images/menu/original_img/Maui-Wowie.jpg" width="70" alt="maui-wowie"><br>Maui Wowie
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Hipster')"><img
+                            src="images/menu/original_img/Hipster.jpg" width="70" alt="hipster"><br>The Hipster
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Galactic')"><img
+                            src="images/menu/original_img/Galactic.jpg" width="70" alt="galactic"><br>The Galactic
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Thailander')"><img
+                            src="images/menu/original_img/Thailander.jpg" width="70" alt="thailander"><br>Thailander
+                    </button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="Old-School" class="tabcontent">
+        <img src="images/menu/original_img/Old-School.jpg" width="200" alt="old-school"><span class="extra-space_pizza_pic"></span>
+        <img src="images/menu/original_img/Old-School-Vegan.jpg" width="200" alt="old-school-vegan">
+
+        <h3>The Old School <span class="extra-space_pizza"></span>Vegan Old School</h3>
+        <p>Ingredients: Tomato sauce, mozzarella cheese, pepperoni, sausage, organic button mushrooms, organic green
+            peppers, and organic red onions.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="Bianca" class="tabcontent">
+        <img src="images/menu/original_img/Pizza-Bianca.jpg" width="200" alt="biance">
+
+        <h3>Pizza Bianca</h3>
+        <p>Ingredients: Olive oil and garlic sauce, mozzarella cheese, sundried tomatoes, garlic, artichoke hearts, and
+            topped with organic goat cheese.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.90
+                </td>
+                <td>
+                    $20.65
+                </td>
+                <td>
+                    $24.45
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan (no goat cheese)
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $21.10
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="Brooklyn" class="tabcontent">
+        <img src="images/menu/original_img/Brooklyn-Bee.jpg" width="200"alt="brooklyn"><span class="extra-space_pizza_pic"></span>
+        <img src="images/menu/original_img/Brooklyn-Bee-Vegan.jpg" width="200" alt="brooklyn-vegan">
+
+        <h3>The Brooklyn Bee <span class="extra-space_pizza"></span>Vegan Brooklyn Bee</h3>
+        <p>Ingredients: San Marzano sauce, red pepper flakes, sopressata, organic roma tomatoes, organic red onions,
+            mozzarella cheese, Pecorino Romano cheese and topped with honey.</p>
+        <table class="ingredients">
+                <tr>
+                    <td>
+                        Regular
+                    </td>
+                    <td>
+                        $15.90
+                    </td>
+                    <td>
+                        $20.65
+                    </td>
+                    <td>
+                        $24.45
+                    </td>
+                </tr>
+                <br>
+
+                <tr>
+                    <td>
+                        Vegetarian
+                    </td>
+                    <td>
+                        $15.90
+                    </td>
+                    <td>
+                        $20.65
+                    </td>
+                    <td>
+                        $24.45
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>
+                        Vegan
+                    </td>
+                    <td>
+                        $15.55
+                    </td>
+                    <td>
+                        $20.20
+                    </td>
+                    <td>
+                        $23.85
+                    </td>
+                </tr>
+                <br>
+                <tr>
+                    <td>
+                        Gluten Free
+                    </td>
+                    <td>
+                        $21.10
+                    </td>
+                </tr>
+            </table>
+    </div>
+
+    <div id="Alfredo" class="tabcontent">
+        <img src="images/menu/original_img/Alfredo.jpg" width="200" alt="alfredo">
+
+        <h3>Alfredo</h3>
+        <p>Ingredients: Creamy alfredo sauce, mozzarella cheese, organic roma tomatoes, organic broccoli, and marinated
+            free roam chicken.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $15.90
+                </td>
+                <td>
+                    $20.65
+                </td>
+                <td>
+                    $24.45
+                </td>
+            </tr>
+            <br>
+
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.90
+                </td>
+                <td>
+                    $20.65
+                </td>
+                <td>
+                    $24.45
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $21.10
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="Vodka" class="tabcontent">
+        <img src="images/menu/original_img/Pizza-Alla-Vodka.jpg" width="200" alt="vodka">
+
+        <h3>Pizza Alla Vodka</h3>
+        <p>Ingredients: Creamy tomato vodka sauce, mozzarella cheese, organic button mushrooms, prosciutto, and fresh
+            organic basil.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Paul Bunyan" class="tabcontent">
+        <img src="images/menu/original_img/Paul-Bunyan.jpg" width="200" alt="paul-bunyan">
+
+        <h3>The Paul Bunyan (VO)</h3>
+        <p>This is a very special pizza. The first of its kind. All of the toppings have been selected based on the fact
+            that they are native to the Minnesota ecosystem, giving it a unique flavor that is truly Minnesotan. It
+            starts with our homemade tomato sauce, then is topped with mozzarella cheese, morel mushrooms, wild rice,
+            and free range bison sausage.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Ranch" class="tabcontent">
+        <img src="images/menu/original_img/Ranch-Dude.jpg" width="200" alt="ranch">
+
+        <h3>Ranch Dude</h3>
+        <p>Ingredients: Creamy ranch sauce, mozzarella cheese, organic roma tomatoes, all natural bacon, organic button
+            mushrooms, and organic red onions.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Harvest" class="tabcontent">
+        <img src="images/menu/original_img/Second-Harvest.jpg" width="200" alt="harvest">
+
+        <h3>Second Harvest</h3>
+        <p>Ingredients: Tomato sauce, mozzarella cheese, organic Roma tomatoes, garlic, and fresh organic basil. Every
+            time you order this pizza, we will donate $1 to Second Harvest Heartland, Minnesota’s largest hunger relief
+            organization..</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Veggie" class="tabcontent">
+        <img src="images/menu/original_img/Organic-Veggie.jpg" width="200" alt="veggie">
+
+        <h3>Organic Veggie (VO)</h3>
+        <p>Ingredients: Tomato sauce, mozzarella cheese, organic button mushrooms, organic roma tomatoes, organic green
+            peppers, and organic red onions.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Shroomer" class="tabcontent">
+        <img src="images/menu/original_img/Shroomer.jpg" width="200" alt="shroomer">
+
+        <h3>The Shroomer (VO)</h3>
+        <p>Ingredients: Tomato sauce, mozzarella cheese, pepperoni, sausage, organic button mushrooms, organic green
+            peppers, and organic red onions.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Mexicali" class="tabcontent">
+        <img src="images/menu/original_img/Mexicali.jpg" width="200" alt="mexicali">
+
+        <h3>Mexicali</h3>
+        <p>Ingredients: Salsa Lisa cream sauce, mozzarella cheese, cheddar cheese, marinated free roam chicken, organic green onion, organic roma tomatoes, jalapeños, and organic cilantro.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Alamo" class="tabcontent">
+        <img src="images/menu/original_img/Alamo.jpg" width="200" alt="alamo">
+
+        <h3>The Alamo (VO)</h3>
+        <p>Ingredients: Tangy barbeque sauce (contains gluten), mozzarella cheese, cheddar cheese, marinated free roam chicken, organic red onions, organic button mushrooms, and organic red bell peppers.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Maui-Wowie" class="tabcontent">
+        <img src="images/menu/original_img/Maui-Wowie.jpg" width="200" alt="maui-wowie">
+
+        <h3>Maui Wowie</h3>
+        <p>Ingredients: Sun-dried tomato pesto, mozzarella cheese, Canadian bacon, pineapple, and jalapeños.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Hipster" class="tabcontent">
+        <img src="images/menu/original_img/Hipster.jpg" width="200" alt="hipster">
+
+        <h3>The Hipster</h3>
+        <p>Ingredients: Tomato sauce, mozzarella cheese, organic spinach, organic button mushrooms, organic red onions, organic roma tomatoes, and topped with feta cheese.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Vegan (no feta)
+                </td>
+                <td>
+                    $15.55
+                </td>
+                <td>
+                    $20.20
+                </td>
+                <td>
+                    $23.85
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Galactic" class="tabcontent">
+        <img src="images/menu/original_img/Galactic.jpg" width="200" alt="galactic">
+
+        <h3>The Galactic</h3>
+        <p>Ingredients: Homemade hemp pesto sauce, mozzarella cheese, organic button mushrooms, garlic, organic roma tomatoes, and oregano.
+        </p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $15.20
+                </td>
+                <td>
+                    $19.65
+                </td>
+                <td>
+                    $23.40
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    Gluten Free
+                </td>
+                <td>
+                    $20.10
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Thailander" class="tabcontent">
+        <img src="images/menu/original_img/Thailander.jpg" width="200" alt="thailander">
+        <h3>The Thailander</h3>
+        <p>Ingredients: Spicy Thai peanut sauce (contains gluten), mozzarella cheese, marinated free roam chicken, organic green onions, bean sprouts, shredded carrots, crushed peanuts, and fresh organic cilantro.
+        </p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $14.90
+                </td>
+                <td>
+                    $19.30
+                </td>
+                <td>
+                    $22.85
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!--here's the wings tab-->
+    <div id="Wings" class="tab">
+        <table>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Chicken-Wings')" style="top: 40px"><img
+                            src="images/menu/original_img/wings.jpg" width="70" alt="wings"><br>Wings
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div id="Chicken-Wings" class="tabcontent">
+
+        <img src="images/menu/original_img/wings.jpg" width="200" alt="wings">
+
+        <h3>Wings</h3>
+        <p>Our delicious wings come from Kadejan chickens that are free roam, antibiotic free, minimally processed, and
+            have no artificial ingredients (GF).</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Prepared:
+                </td>
+                <td>
+                    Fried or Baked
+                </td>
+            </tr>
+            <br>
+            <tr>
+        <td>
+        Sauces:
+        </td>
+        <td>
+            Buffalo, BBQ, Thai-Peanut, or Green Curry
+        </td>
+        <br>
+        <tr>
+        <td>
+        Dipping Sauces:
+        </td>
+        <td>
+            Ranch or Blue Cheese Dressing
+        </td>
+    </tr>
+        <br>
+        <tr>
+        <td>
+        6 pc
+        </td>
+            <td>
+                $8.70
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td>
+                12 pc
+            </td>
+            <td>
+                $15.48
+            </td>
+        </tr>
+    </table>
+</div>
+
+    <!--here's the Appetizers tab-->
+    <div id="Appetizers" class="tab" style="top: 260px">
+        <p class="key">V = VEGAN <span class="extra-space"></span>VO = VEGAN OPTION<span class="extra-space"></span>GF = GLUTEN FREE</p>
+
+        <table>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Mozzarella-Sticks')" style="top: 5px"><img
+                            src="images/menu/original_img/Mozzarella-Sticks.jpg" width="70" alt="mozzarella-sticks"><br>Mozzarella Sticks
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Egg-Rolls')" style="top: 5px"><img
+                            src="images/menu/original_img/Egg-Rolls.jpg" width="70" alt="egg-rolls"><br>Italian Egg Rolls
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Artichoke-Dip')" style="top: 5px"><img
+                            src="images/menu/original_img/Artichoke-Dip.jpg" width="70" alt="artichoke-dip"><br>Artichoke Dip
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Garlic-Bread')" style="top: 5px"><img
+                            src="images/menu/original_img/Garlic-Cheese-Bread.jpg" width="70" alt="garlic-bread"><br>Gaelic Cheese Bread <br>(VO)
+                    </button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Rosie-Pizza')" style="top: -5px"><img
+                            src="images/menu/original_img/The-Rosie.jpg" width="70" alt="rosie-pizza"><br>The Rosie Pizza <br>(V)
+                    </button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div id="Mozzarella-Sticks" class="tabcontent">
+        <img src="images/menu/original_img/Mozzarella-Sticks.jpg" width="200" alt="mozzarella-sticks">
+
+        <h3>Homemade Mozzarella Sticks</h3>
+        <p>Made fresh in house, our hand battered mozzarella sticks are made from locally produced mozzarella cheese.  We deep fry them to a perfect golden brown and serve them with a side of red sauce for dipping.  Enjoy!</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Prices
+                </td>
+                <td>
+                    $8.35
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Egg-Rolls" class="tabcontent">
+        <img src="images/menu/original_img/Egg-Rolls.jpg" width="200" alt="egg-rolls">
+
+        <h3>Hand Rolled Italian Egg Rolls</h3>
+        <p>Hand-stuffed with spicy Italian sausage, organic bell peppers, organic spinach, organic red onion, locally produced mozzarella cheese, and then deep fried to perfection. Served with a side of red sauce.</p>
+        <table class="ingredients">
+        <tr>
+            <td>
+                Prices
+            </td>
+            <td>
+                $8.35
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id="Artichoke-Dip" class="tabcontent">
+        <img src="images/menu/original_img/Artichoke-Dip.jpg" width="200" alt="artichoke-dip">
+
+        <h3>Spinach And Artichoke Dip</h3>
+        <p>Cheesy, creamy, dipping goodness, with the perfect blend of garlic and spice.  This stuff is sure to please!  Served with a side of sliced, toasted Italian baguette.</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                    Prices
+                </td>
+                <td>
+                    $8.90
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Garlic-Bread" class="tabcontent">
+        <img src="images/menu/original_img/Garlic-Cheese-Bread.jpg" width="200" alt="garlic-bread">
+
+        <h3>Garlic Cheese Bread (VO)</h3>
+        <p>Locally crafted Italian baguette loaded with mozzarella cheese and garlic butter.  We finish it off with a touch of herbs and spices.  Served with a side of red sauce.
+        </p>
+        <table class="ingredients">
+        <tr>
+                <td>
+                    Regular
+                </td>
+                <td>
+                    $5.75
+                </td>
+            </tr>
+        <tr>
+            <td>
+                Vegan
+            </td>
+            <td>
+                $6.00
+            </td>
+        </tr>
+        </table>
+    </div>
+    <div id="Rosie-Pizza" class="tabcontent">
+        <img src="images/menu/original_img/The-Rosie.jpg" width="200" alt="rosie-pizza">
+
+        <h3>The Rosie Pizza (V)</h3>
+        <p>For everyone who has ever wanted to eat a little pizza before they eat a lot of pizza. San Marzano tomato sauce, chili flakes, fresh basil, sliced garlic, extra virgin olive oil. (No cheese)
+        </p>
+        <table class="ingredients">
+        <tr>
+            <td>
+                Regular
+            </td>
+            <td>
+                $8.10
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gluten Free
+            </td>
+            <td>
+                $13.20
+            </td>
+        </tr>
+    </table>
+    </div>
+    <div id="Nuggets" class="tabcontent">
+        <img src="images/menu/original_img/Nuggets.jpg" width="200" alt="nuggets">
+
+        <h3>Nuggets (V)</h3>
+        <p>These baked vegan nuggets are crispy and lightly seasoned. Served with a side of Buffalo, BBQ, or Green Curry sauce.</p>
+        <table class="ingredients">
+        <tr>
+            <td>
+                8 pc
+            </td>
+            <td>
+                $10.60
+            </td>
+        </tr>
+    </table>
+    </div>
+
+
+    <!--here's the Salads tab-->
+    <div id="Salads" class="tab" style="top: 260px">
+        <p class="key">V = VEGAN <span class="extra-space"></span>VO = VEGAN OPTION<span class="extra-space"></span>GF = GLUTEN FREE</p>
+
+        <table>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Greek')" style="top: 5px"><img
+                            src="images/menu/original_img/Greek-Salad.jpg" width="70" alt="greek-salad"><br>Greek<br>(VO, GF)
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Caesar')" style="top: 5px"><img
+                            src="images/menu/original_img/Caesar-Hemp-Salad.jpg" width="70" alt="caesar-salad"><br>Caesar Hemp
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Artichoke-Salad')" style="top: 5px"><img
+                            src="images/menu/original_img/Artichoke-and-Prosciutto-Salad.jpg" width="70" alt="artichoke-salad"><br>Artichoke And Prosciutto<br> (GF)
+                    </button>
+                </td>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'BLT')" style="top: 5px"><img
+                            src="images/menu/original_img/BLT-Salad.jpg" width="70" alt="blt-salad"><br>BLT
+                    </button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Garden')" style="top: -5px"><img
+                            src="images/menu/original_img/Garden-Salad.jpg" width="70" alt="garden-salad"><br>Garden
+                    </button>
+                </td>
+
+                <td>
+                    <button class="tablinks" onclick="openPizza(event, 'Rocket')" style="top: -5px"><img
+                            src="images/menu/original_img/Galactic-pizza-rocket-salad-1.jpeg" width="70" alt="rocket-salad"><br>Rocket<br>(V, GF)
+                    </button>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <div id="Greek" class="tabcontent">
+        <img src="images/menu/original_img/Greek-Salad.jpg" width="200" alt="greek-salad">
+
+        <h3>Greek Salad (VO, GF)</h3>
+        <p>Organic romaine lettuce tossed with organic cucumbers, kalamata olives, organic roma tomatoes, organic red onions, and our  homemade Greek dressing. Topped with crumbled feta cheese.
+        </p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Small
+                </td>
+                <td>
+                   Large
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $5.70
+                </td>
+                <td>
+                    $9.85
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Caesar" class="tabcontent">
+        <img src="images/menu/original_img/Caesar-Hemp-Salad.jpg" width="200" alt="caesar-salad">
+
+        <h3>Caesar Hemp Salad</h3>
+        <p>Organic romaine lettuce tossed with creamy homemade Caesar hemp dressing and crunchy croutons. Topped with fresh grated parmesan cheese.
+</p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Small
+                </td>
+                <td>
+                    Large
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $5.00
+                </td>
+                <td>
+                    $8.40
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Artichoke-Salad" class="tabcontent">
+        <img src="images/menu/original_img/Artichoke-and-Prosciutto-Salad.jpg" width="200" alt="artichoke-salad">
+
+        <h3>Artichoke And Prosciutto Salad (GF)</h3>
+        <p>A blend of organic spinach and organic romaine tossed with sliced prosciutto, artichokes, sliced roasted red peppers, and our homemade Greek dressing. Topped with fresh grated parmesan cheese.
+        </p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Small
+                </td>
+                <td>
+                    Large
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $5.70
+                </td>
+                <td>
+                    $9.85
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="BLT" class="tabcontent">
+        <img src="images/menu/original_img/BLT-Salad.jpg" width="200" alt="blt-salad">
+
+        <h3>BLT Salad</h3>
+        <p>Organic romaine lettuce tossed with all natural bacon, organic roma tomatoes, organic red onion, croutons, and our homemade balsamic vinaigrette dressing. Topped with crumbled blue cheese.
+        </p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Small
+                </td>
+                <td>
+                    Large
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $5.70
+                </td>
+                <td>
+                    $9.85
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Garden" class="tabcontent">
+        <img src="images/menu/original_img/Garden-Salad.jpg" width="200" alt="garden-salad">
+
+        <h3>Garden Salad</h3>
+        <p>Organic romaine lettuce tossed with organic roma tomatoes, organic red onions, sliced carrots, organic broccoli, organic cucumbers, crunchy croutons and served with creamy ranch dressing. Topped with grated cheddar cheese.
+        </p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Small
+                </td>
+                <td>
+                    Large
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $5.70
+                </td>
+                <td>
+                    $9.85
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="Rocket" class="tabcontent">
+        <img src="images/menu/original_img/Galactic-pizza-rocket-salad-1.jpeg" width="200" alt="rocket-salad">
+
+        <h3>Rocket Salad (V, GF)</h3>
+        <p>Organic arugula salad featuring organic red onions, organic Gala apple slices, dried cranberries, and toasted pecans. Topped with lemon vinaigrette dressing.
+        </p>
+        <table class="ingredients">
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Small
+                </td>
+                <td>
+                    Large
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Vegetarian
+                </td>
+                <td>
+                    $5.70
+                </td>
+                <td>
+                    $9.85
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script>
+    function openCategory(evt, categoryName) {
+        var i, tab, categorylinks, tabcontent;
+        tab = document.getElementsByClassName("tab");
+        for (i = 0; i < tab.length; i++) {
+            tab[i].style.display = "none";
+        }
+
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        categorylinks = document.getElementsByClassName("categorylinks");
+        for (i = 0; i < categorylinks.length; i++) {
+            categorylinks[i].className = categorylinks[i].className.replace(" active", "");
+        }
+        document.getElementById(categoryName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function openPizza(evt, pizzaName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(pizzaName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+</script>
+
+</div> <!--End of wrapper-->
+<!--<script-->
+<!--   $(document).ready(function(){-->
+<!--// Add smooth scrolling to all links-->
+<!--       $("a").on('click', function(event)   {-->
+
+<!--// Make sure.hash has a value before overriding default behavior-->
+<!--            if (this.hash !== "")  {-->
+
+<!--// Prevent default anchor click behavior-->
+<!--//               event.preventDefault();-->
+
+<!--// Store hash-->
+<!--                var hash = this.hash;-->
+
+<!--// Using jQuery's animate() method to add smooth page scroll-->
+<!--// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area-->
+<!--//               $('html, body').animate({-->
+<!--//                   scrollTop: $(hash).offset().top-->
+<!--//                }, 800, function(){-->
+
+<!--// And hash (#) to URL when done scrolling (default click behavior)-->
+<!--//                 window.location.hash = hash;-->
+<!--//              });-->
+<!--//        } // End if-->
+<!--//     });-->
+<!--//   });-->
+<!--</script>-->
+
+</body>
+</html>
